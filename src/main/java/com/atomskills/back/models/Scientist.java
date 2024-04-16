@@ -1,5 +1,6 @@
 package com.atomskills.back.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
@@ -21,5 +22,6 @@ import java.util.List;
 public class Scientist extends AppUser {
     @OneToMany
     @JoinColumn(name = "scientist_id")
+    @JsonIgnore
     private List<Report> reports;
 }
