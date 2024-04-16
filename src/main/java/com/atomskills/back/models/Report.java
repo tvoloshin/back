@@ -24,11 +24,12 @@ import java.util.Date;
 public class Report {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
-    public String title;
-    public String filePath;
-    public ReportStatus status;
-    public Date updatedAt;
+    private int id;
+    private String title;
+    private String filePath;
+    private ReportStatus status;
+    private Date updatedAt;
+    private String message;
 
     @ManyToOne
     @JoinColumn(name = "scientist_id", referencedColumnName = "id")
