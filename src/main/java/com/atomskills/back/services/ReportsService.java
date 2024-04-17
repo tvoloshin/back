@@ -101,7 +101,6 @@ public class ReportsService {
     }
 
     public Resource download(int userId, int reportId) {
-//        reportsRepository.findById(reportId).orElseThrow().getFilePath()
-        return new PathResource("Files-Upload/" + reportId + "/asd.docx");
+        return new PathResource("Files-Upload/" + reportId + "/" + reportsRepository.findById(reportId).orElseThrow().getFilePath());
     }
 }

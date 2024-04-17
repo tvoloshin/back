@@ -16,7 +16,7 @@ public class LoginController {
     private final LoginService loginService;
 
     @PostMapping("login")
-    public ResponseEntity<?> login(LoginDto dto) {
+    public ResponseEntity<?> login(@RequestBody LoginDto dto) {
         int id = loginService.login(dto.getLogin());
         return ResponseEntity.ok(id);
     }
