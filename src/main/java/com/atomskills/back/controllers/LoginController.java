@@ -17,13 +17,11 @@ public class LoginController {
 
     @PostMapping("login")
     public ResponseEntity<?> login(@RequestBody LoginDto dto) {
-        int id = loginService.login(dto.getLogin());
-        return ResponseEntity.ok(id);
+        return ResponseEntity.ok(loginService.login(dto.getLogin()));
     }
 
     @PostMapping("signup")
     public ResponseEntity<?> signup(@RequestBody SignupDto dto) {
-        loginService.signup(dto.getLogin(), dto.getUserRole());
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(loginService.signup(dto.getLogin(), dto.getUserRole()));
     }
 }

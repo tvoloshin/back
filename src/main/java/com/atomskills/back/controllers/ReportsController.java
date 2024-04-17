@@ -48,6 +48,7 @@ public class ReportsController {
                 .body(resource);
     }
 
+    @CrossOrigin
     @PutMapping("/{reportId}/approve")
     public ResponseEntity<?> approve(@PathVariable("userId") int userId,
                                      @PathVariable("reportId") int reportId) {
@@ -55,6 +56,7 @@ public class ReportsController {
         return ResponseEntity.ok(result);
     }
 
+    @CrossOrigin
     @PutMapping("/{reportId}/reject")
     public ResponseEntity<?> reject(@PathVariable("userId") int userId,
                                     @PathVariable("reportId") int reportId,
